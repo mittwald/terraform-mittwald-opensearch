@@ -2,14 +2,14 @@
 
 This example shows a minimal usage of the `mittwald/opensearch/mittwald` module.
 
-It will provision a single-node OpenSearch instance in a container, which will then be available for internal use in your hosting environment. To connect to your OpenSearch instance, use the `module.opensearch.opensearch_url` output variable.
+It will provision a single-node OpenSearch instance in a container, which will then be available for internal use in your hosting environment. To connect to your OpenSearch instance, use the `module.opensearch.url` output variable.
 
 ```hcl
 module "opensearch" {
   source = "mittwald/opensearch/mittwald"
 
   project_id = var.project_id
-  opensearch_initial_admin_password = "..."
+  initial_admin_password = "..."
 }
 ```
 
@@ -27,6 +27,6 @@ module "opensearch" {
   source = "mittwald/opensearch/mittwald"
 
   project_id = var.project_id
-  opensearch_initial_admin_password = random_password.opensearch_admin.result
+  initial_admin_password = random_password.opensearch_admin.result
 }
 ```

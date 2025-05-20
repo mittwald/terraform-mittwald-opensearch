@@ -13,10 +13,10 @@ module "opensearch" {
   source = "mittwald/opensearch/mittwald"
 
   project_id = var.project_id
-  opensearch_initial_admin_password = random_password.opensearch_admin.result
+  initial_admin_password = random_password.opensearch_admin.result
 }
 
 output "opensearch_url" {
-  value = module.opensearch.opensearch_url
+  value = module.opensearch.url
   description = "The URL that your applications can use to connect to OpenSearch."
 }
