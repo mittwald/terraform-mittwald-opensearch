@@ -10,7 +10,7 @@ resource "random_password" "opensearch_admin" {
 }
 
 module "opensearch" {
-  source = "mittwald/opensearch"
+  source = "mittwald/opensearch/mittwald"
 
   project_id = var.project_id
   opensearch_initial_admin_password = random_password.opensearch_admin.result

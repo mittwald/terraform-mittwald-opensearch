@@ -8,7 +8,7 @@ resource "mittwald_project" "test" {
 }
 
 module "opensearch" {
-  source = "mittwald/opensearch"
+  source = "mittwald/opensearch/mittwald"
 
   project_id = mittwald_project.test.id
   opensearch_initial_admin_password = random_password.opensearch_admin.result
