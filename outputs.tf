@@ -9,11 +9,11 @@ output "container_id" {
 }
 
 output "dashboard_url" {
-  value = var.opensearch_dashboard_enabled ? one(module.dashboard[*].url) : null
+  value = var.dashboard_enabled ? one(module.dashboard[*].url) : null
   description = "The internal URL at which the OpenSearch dashboard will be available."
 }
 
 output "dashboard_container_id" {
-  value = var.opensearch_dashboard_enabled ? one(module.dashboard[*].container_id) : null
+  value = var.dashboard_enabled ? one(module.dashboard[*].container_id) : null
   description = "The ID of the OpenSearch dashboard container. This might be useful when wanting to connect a virtualhost to this container for external access."
 }

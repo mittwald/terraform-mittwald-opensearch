@@ -47,7 +47,7 @@ resource "mittwald_container_stack" "opensearch" {
 
       environment = {
         "discovery.type" = "single-node"
-        "OPENSEARCH_INITIAL_ADMIN_PASSWORD" = var.opensearch_initial_admin_password
+        "OPENSEARCH_INITIAL_ADMIN_PASSWORD" = var.initial_admin_password
       }
 
       volumes = [
@@ -67,7 +67,7 @@ resource "mittwald_container_stack" "opensearch" {
 module "dashboard" {
   source = "./modules/dashboard"
 
-  count      = var.opensearch_dashboard_enabled ? 1 : 0
+  count      = var.dashboard_enabled ? 1 : 0
   depends_on = [mittwald_container_stack.opensearch]
 
   project_id         = var.project_id

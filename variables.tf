@@ -9,14 +9,14 @@ variable "opensearch_version" {
     description = "OpenSearch version to install; this needs to be a valid tag from https://hub.docker.com/r/opensearchproject/opensearch/tags"
 }
 
-variable "opensearch_initial_admin_password" {
+variable "initial_admin_password" {
     type = string
     sensitive = true
     description = "Initial admin password to use for OpenSearch. This must be a strong password; see https://opensearch.org/blog/replacing-default-admin-credentials/ for more information."
 }
 
-variable "opensearch_dashboard_enabled" {
+variable "dashboard_enabled" {
     type = bool
     default = false
-    description = "Enable an OpenSearch dashboard deployment"
+    description = "Set this flag to enable an OpenSearch dashboard deployment"
 }
