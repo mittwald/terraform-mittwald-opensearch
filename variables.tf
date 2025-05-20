@@ -12,7 +12,7 @@ variable "opensearch_version" {
 variable "opensearch_initial_admin_password" {
     type = string
     sensitive = true
-    description = "Initial admin password to use for OpenSearch"
+    description = "Initial admin password to use for OpenSearch. This must be a strong password; see https://opensearch.org/blog/replacing-default-admin-credentials/ for more information."
 }
 
 variable "opensearch_dashboard_enabled" {
