@@ -3,7 +3,7 @@ output "opensearch_url" {
 }
 
 output "opensearch_dashboard_url" {
-  value = "https://${local.dashboard_container_name}:${local.dashboard_web_port}"
+  value = vars.opensearch_dashboard_enabled ? "https://${local.dashboard_container_name}:${local.dashboard_web_port}" : null
 }
 
 output "opensearch_container_id" {
@@ -11,5 +11,5 @@ output "opensearch_container_id" {
 }
 
 output "opensearch_dashboard_container_id" {
-  value = one(resource.mittwald_container_stack.opensearch_dashboard[*].containers[local.dashboard_container_name].id)
+  value = vars.opensearch_dashboard_enabled ? one(resource.mittwald_container_stack.opensearch_dashboard[*].containers[local.dashboard_container_name].id) : null
 }
