@@ -6,7 +6,7 @@ To deploy a dashboard instance, set the `dashboard_enabled` input variable to tr
 
 ## Enabling the dashboard deployment
 
-Set the `openserach_dashboard_enabled` input variable to `true`, to enable the dashboard deployment:
+Set the `dashboard_enabled` input variable to `true`, to enable the dashboard deployment:
 
 ```hcl
 module "opensearch" {
